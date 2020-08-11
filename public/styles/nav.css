@@ -1,0 +1,11 @@
+nav {
+  height: 120px;
+  background-color: #4056A1;
+  width: 100%;
+  padding: 1.5em;
+  color: #ffffff;
+}
+
+.logo {
+  font-family: 'Bungee', cursive;
+}
