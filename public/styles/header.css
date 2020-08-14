@@ -5,8 +5,16 @@ header {
   flex-direction: column;
   align-items: center; 
   background-color: rgb(190, 230, 253);
-background-image: url(http://www.transparenttextures.com/patterns/cubes.png);
+  background-image: url(http://www.transparenttextures.com/patterns/cubes.png);
 }
 
 .avatar {
+  margin: 10% 0 0 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    padding: 30px;
+    width: 30vw;
+  }
 }

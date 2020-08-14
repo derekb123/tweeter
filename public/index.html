@@ -6,8 +6,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;0,700;1,300;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;0,700;1,300;1,600;1,700&display=swap" rel="stylesheet">    
 
 
     <!-- App CSS -->
@@ -15,46 +14,78 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ffaee15f4.js" crossorigin="anonymous"></script>
+    <!-- <script src="<https://use.fontawesome.com/e58762c588.js"></script> -->
+    <!-- <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
     <nav>
       <span class = "logo">tweeter</span>
-      <div class = "write-tweet" ><span class = "b1">Write</span> a new tweet</div>
-
+      <div class = "nav-action">
+        <div class = "write-tweet" ><span class = "b1">Write</span> a new tweet</div>
+        <div class="down-arrows">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
     </nav>
 
-    <header>
-      <div>
-          <img class = "avatar" src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
-  </header>
-  
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form class = "tweet-form">
-          <label class = "tweet-label" for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class= form-bottom>
-            <button class = tweet-button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+    <div class="header-main">
+      <header>
+        <div>
+            <img class = "avatar" src="/images/profile-hex.png"> 
+        </div>
+        <div>
+            <h2>Your Name</h2>
+        </div>
+      </header>
+    
+      <main class="container">
+        <section class="new-tweet">
+          <div class="instructions">
+            <h2>Compose Tweet</h2>
+            <p class="error-message"></p>
           </div>
-        </form>
-      </section>
-    </main>
+          <form class="tweet-form">
+            <label class="tweet-label" for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="form-bottom">
+              <button class="tweet-button" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+
+        <section id="tweets-container">
+          <article class="tweet">
+            <div class="tweet-header"> 
+              <div> 
+                <img class="avatarSm" src="/images/profile-hex.png">
+                <h3>Name</h3>
+              </div>
+              <p class="handle">@handle</p>
+            </div>
+            <p class="tweet-content">something</p>
+            <div class = "tweet-footer"> 
+              <p>4 hours ago</p>
+              <div>
+                <i class="fas fa-flag"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

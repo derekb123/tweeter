@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -27,6 +28,17 @@ main {
   background-color: #ecf2f4;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+@media only screen and (min-width: 1024px) {
+  .header-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    margin-top: 45px;
+  }
+
+  main {
+    width: 60vw;
+    padding-left: 60px;
+  }
+}

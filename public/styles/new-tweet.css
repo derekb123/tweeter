@@ -2,19 +2,25 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  
 }
 
 .tweet-label {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   width: 100%;
-  border-bottom: 5px solid #585858;
 }
 
 #tweet-text {
   background-color: #ecf2f4;
   border: none;
+  border-bottom: 5px solid #585858;
+  margin-bottom: 1em;
+  outline: none;
+  resize: none;
+}
+
+#tweet-text:focus {
+  background-color:  #d8dee0;
 }
 
 .form-bottom{
@@ -38,5 +44,97 @@
 .counter {
   font-family: 'Bungee', sans-serif;
   font-weight: 300;
-
+  color: #585858
 }
+
+.negative-counter {
+  font-family: 'Bungee', sans-serif;
+  font-weight: 300;
+  color: red;
+}
+
+.tweet {
+  margin: 1.5rem 0 1.5rem 0;
+  border: solid 3px #585858;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+
+.tweet-header {
+  padding: .5rem;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  background-color: rgb(190, 230, 253)
+}
+
+.tweet-header div {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.tweet-header img {
+ height: 6rem;
+ display: inline-block;
+}
+
+.tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1.5px solid #585858;
+  margin: 0 1rem;
+}
+
+.tweet-footer div i{
+  height: 3px;
+}
+
+.handle {
+  display: none;
+}
+
+.tweet:hover {
+  box-shadow: 3px 5px #585858;
+  font-weight: 700;
+}
+
+
+.tweet:hover .handle {
+  display: block;
+  font-weight: lighter;
+  color: #838383;
+}
+
+.error-message {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  color: red;
+  font-size: 1em;
+  overflow-wrap: break-word;
+  display: none;
+  max-width: 50%;
+  margin: 0;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.instructions h2 {
+  margin: 15px 0;
+  display: inline;
+}
+
+.tweet-content {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
