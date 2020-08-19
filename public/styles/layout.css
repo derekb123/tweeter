@@ -11,10 +11,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   color: #545149;
   background-color: #ecf2f4;
@@ -28,7 +24,9 @@ main {
   background-color: #ecf2f4;
 }
 
+/* desktop screen size: header/ main changes to flex-row layout*/
 @media only screen and (min-width: 1024px) {
+/* container for the side by side profile and tweets sections */
   .header-main {
     display: flex;
     flex-direction: row;

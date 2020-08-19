@@ -12,6 +12,7 @@ header {
   margin: 10% 0 0 0;
 }
 
+/* desktop screen size: specs for header when changes side by side with tweets */
 @media only screen and (min-width: 1024px) {
   header {
     padding: 30px;

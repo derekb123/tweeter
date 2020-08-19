@@ -1,18 +1,24 @@
+//Escape message input to reduce chances of content affecting app operation, used in createTweetElement
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
+
+
 $(document).ready(function() {
 
+//empties pre-existing tweets from container, renders and adds the new tweet @ top of list
   const renderTweets = function(tweets) {
+    $("#tweets-container").empty();
     for (const tweet of tweets) {
       const $tweetRen = createTweetElement(tweet);
       $('#tweets-container').prepend($tweetRen);
     }
   }
 
+//composes tweet as template literal string in html format
 const createTweetElement = function(tweet) {
   const $tweet = $(`<article class = "tweet">
     <div class='tweet-header'> 
@@ -24,7 +30,7 @@ const createTweetElement = function(tweet) {
     </div>
     <p class="tweet-content">${escape(tweet.content.text)}</p>
     <div class='tweet-footer'> 
-      <p>${moment().startOf('hour').fromNow()}</p>
+      <p>${moment(tweet.created_at).fromNow()}</p>
       <div>
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
@@ -35,13 +41,13 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
-// renderTweets(data);
-
+//event listener and handler
 let $form = $('.tweet-form');
 $form.on('submit', (event) => {
   event.preventDefault();
   let $textLength = $('#tweet-text').val().length;
 
+//error handling/ message input serialization and post
   if ($textLength === 0) {
     $('.error-message').html('Tweets cannot be empty!')
     $('.error-message').show();
@@ -63,6 +69,7 @@ $form.on('submit', (event) => {
   }
 });
 
+//get request loads JSON encoded data and calls renderTweets
 const loadTweets = function (){
   $.getJSON('/tweets')
     .then((text) => {

@@ -30,6 +30,7 @@ nav {
   font-weight: bold;
 }
 
+/* desktop screen size: nav bar changes to same color as header for seamless appearance */
 @media only screen and (min-width: 1024px) {
   nav {
     background-color: #4056A1 ;
